@@ -5,8 +5,8 @@ FROM node:latest
 RUN apt-get update
 
 # Repo for Yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update && apt-get install -y \
     apt-transport-https \
