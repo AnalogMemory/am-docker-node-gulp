@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get update \
     && npm install -g gulp-cli \
-    && npm install -g bower \
-    && npm install -g yarn
+    && npm install -g bower
 
 CMD ["node", "npm", "bower", "gulp", "yarn"]
