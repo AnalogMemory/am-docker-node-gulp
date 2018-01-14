@@ -1,4 +1,4 @@
-# Node based image with Yarn, Gulp, Bower, Gatsby, rsync, lftp components
+# Node based image with Yarn, Gulp, Grunt, Bower, Gatsby, rsync, lftp components
 FROM node:latest
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -20,6 +20,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update \
     && apt-get install -y yarn \
     && npm install -g gulp-cli \
+    && npm install -g grunt-cli \
     && npm install -g gatsby-cli \
     && npm install -g bower
 
